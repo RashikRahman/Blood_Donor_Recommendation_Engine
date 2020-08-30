@@ -1,8 +1,8 @@
 import pandas as pd
 
 def get_all():
-    url = 'G:\\DS\\3.Personal_Projects\\Blood_Donor_Recommendation_Engine\\donor_data.csv'
-    data = pd.read_csv(url)
+    url = 'G:\\DS\\3.Personal_Projects\\Blood_Donor_Recommendation_Engine\\donor_data.json'
+    data = pd.read_json(url, orient='columns')
     data = data[data['Availability']==1]
     data['rating'] = data['Donate'] / data['Request']
     return data
